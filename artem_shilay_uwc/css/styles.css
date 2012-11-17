@@ -1,0 +1,371 @@
+html {
+    background: url('../img/bg_second.png') repeat-x;
+    height: 100%;
+    width: 100%;
+    
+}
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#content {
+    background: url('../img/bg_content.jpg') no-repeat top center;    
+    width: 100%;
+    height: 100%;
+    padding-top: 75px;
+}
+
+#controls {    
+    padding-top: 75px;
+    position: static;
+}
+
+/* ~~~~~~ SIDE BUTTON ~~~~~~ */
+#enterChat {
+    display: block;
+    position: fixed;
+    top: 149px;
+    width: 220px;
+    left: -95px;
+    text-align: center;
+    z-index: 10;
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg); 
+}
+.ie9 #enterChat {
+    -ms-transform: rotate(-90deg);
+}
+.ie8 #enterChat, .ie7 #enterChat {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    left: 0px;
+    padding: 10px 10px;
+}
+.ie8 #enterChat a {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    position: absolute;
+    display: inline-block;
+}
+.ie8 #enterChat {
+    padding-left: 0px;
+    position: static;
+}
+.ie8 #enterChat:hover, .ie7 #enterChat:hover {
+    margin-left: 0px;
+}
+.ie7 #enterChat img{
+    margin-left: 0px;
+}
+.ie7 .chatButton{
+    width: auto;
+}
+.ie7 .headerLable div {
+    float: left;
+}
+.ie7 .headerLable {
+    margin-top: 15px;
+}
+#enterChat:hover {
+    margin-left: 10px;
+}
+#enterChat a{
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 10px 10px;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 14px;
+    color: #fff;
+
+    -moz-border-radius: 0px 0px 6px 6px;
+    -webkit-border-radius: 0px 0px 6px 6px;
+    -o-border-radius: 0px 0px 6px 6px;
+    -ms-border-radius: 0px 0px 6px 6px;
+    -khtml-border-radius: 0px 0px 6px 6px;
+    border-radius: 0px 0px 6px 6px;
+
+    background: -webkit-gradient(linear, left top, left bottom, from(#ACD610), to(#429400)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #ACD610,  #429400); /* ff 3.6+ */ 
+    background-image: -o-linear-gradient(top, #ACD610, #429400); /* Opera 11.10-12.00 */
+}
+#enterChat img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 3px;
+
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+.ie #enterChat a {
+    background: url('../img/bg_side_button.png') repeat-x; 
+}
+
+/* ~~~~~~~ CHAT ~~~~~~~ */
+#chat {
+    width: 437px;
+    position: relative;
+    margin-left: -217px;
+    left:  50%;  
+    overflow: hidden;
+}
+#chatPopup {
+    background: #64a803;
+    padding-bottom: 20px;
+    border-radius: 5px;
+
+}
+.chatBody {
+    width: 100%;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#429400', endColorstr='#65a903'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#429400), to(#65a903)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #429400,  #65a903); /* ff 3.6+ */ 
+    background-image: -o-linear-gradient(top, #429400, #65a903); /* Opera 11.10-12.00 */
+}
+
+/* ~~~~~~ CHAT HEADER ~~~~~~~ */
+.chatHeader {
+    height: 40px;
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ACD610', endColorstr='#429400'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#ACD610), to(#429400)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #ACD610,  #429400); /* ff 3.6+ */ 
+    background-image: -o-linear-gradient(top, #ACD610, #429400); /* Opera 11.10-12.00 */
+}
+.headerLable {
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    color: #fff;
+    float: left;
+    display: inline-block;
+    margin-top: 10px;
+}
+.headerLable {
+    padding-left: 10px;
+}
+.headerLable div {
+    display: inline-block;
+}
+.closeChat {
+    float: right;
+    display: inline-block;
+    margin-top: 7px;
+    border: 1px solid #387F01;
+    margin-right: 5px;
+    border-radius: 2px;
+}
+.chatButton {
+    border-radius: 2px;
+    color: #fff;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 12px;
+    width: 100%;
+    height: 22px;
+    border: 1px solid #7CB43B;
+    border-top: 1px solid #F1FF45;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9BCB0D', endColorstr='#469701'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#9BCB0D), to(#469701)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #9BCB0D,  #469701); /* ff 3.6+ */ 
+    background-image: -o-linear-gradient(top, #9BCB0D, #469701); /* Opera 11.10-12.00 */
+}
+
+/* ~~~~~~~ CHAT CONTENT ~~~~~~~ */
+.chatContent {
+    background: white;
+    height: 358px;
+    margin: 0px 5px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* ~~~~~~~~ MESSAGES ~~~~~~~ */
+#messages {
+    /*min-height: 230px;*/
+    height: 65%;
+    padding: 10px 0px 10px 10px;
+}
+.message {
+    margin-bottom: 28px;
+    
+}
+.messageHeader {
+    margin-bottom: 7px;
+    font-size: 11px;
+    font-family: Arial, Verdana, sans-serif;
+}
+.name {
+    font-weight: bold;
+}
+.supportMessage .messageHeader{
+    color: #3f9200;
+}
+.userMessage .messageHeader{
+    color: #7a7e80;
+}
+.messageBody {
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 13px;
+}
+
+/* ~~~~~~~~ TEXT FIELD ~~~~~~~ */
+#messageText {
+    height: 65px;
+    margin-bottom: 10px;
+}
+#textArea {
+    border: 1px solid #ccc;
+    outline: none;
+    width:100%;
+    height:100%; 
+    box-sizing: border-box;         /* For IE and modern versions of Chrome */
+    -moz-box-sizing: border-box;    /* For Firefox                          */
+    -webkit-box-sizing: border-box; /* For Safari                           */
+    resize: none;
+    overflow: auto;
+}
+
+/* ~~~~~~~~ ACTION BAR ~~~~~~~ */
+#actionBar {
+    height: 32px;
+}
+.addAttachment {
+    margin-right: 18px;
+    float: left;
+    height: 20px;
+    margin-top: 8px;
+}
+.addAttachment img{
+    height: 15px;
+    width: 16px;
+    vertical-align: middle;
+}
+.addAttachment a{
+    color: #1a699b;
+    padding-top: 10px;
+    text-decoration: none;
+    border-bottom: 1px dashed #1a699b;
+}
+.message .addAttachment {
+    margin-right: 0px;
+    float: none;
+}
+.message .addAttachment a{
+    font-size: 12px;
+    font-family: Arial, Verdana, sans-serif;
+    border-bottom: 1px solid #1a699b;
+    cursor: default;
+}
+#attachment {
+    margin-top: 5px;
+    float: left;
+    height: 17px;
+    background: #e3eaf0;
+    position: relative;
+    padding: 3px 6px 0px;
+}
+#attachment img {
+    margin-left: 2px;
+    height: 7px;
+    width: 7px;
+    vertical-align:middle;
+}
+#addAttachment, #attachment {
+    font-size: 12px;
+}
+
+.sendMessage {
+    float: right;
+}
+.sendButton {
+    height: 32px;
+    width: 110px;
+}
+
+/* ~~~~~~~~ EMAIL POPUP ~~~~~~~ */
+#email {
+    width: 437px;
+    position: relative;
+    margin-left: -217px;
+    left:  50%;
+}
+#emailPopup {
+    padding-bottom: 20px;
+}
+
+/* ~~~~~~ EMAIL HEADER ~~~~~~~ */
+#emailPopup .chatContent {
+    height: 58px;
+    padding: 20px;
+}
+#emailField {
+    width: 65%;
+    float: left;
+    
+}
+#emailField input {
+    height: 30px;
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid #CCC;
+    width: 100%;
+    min-width: 200px;
+    outline: none;
+    font-style: italic;
+    color: #7a7e80;
+    padding-left: 10px;
+}
+.emailLabel {
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+#emailWarning span {
+    color: red;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 10px;
+    font-style: italic;
+}
+#emailWarning {
+    position: absolute;
+    bottom: 5px;
+}
+#email {
+    border-radius: 5px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#429400', endColorstr='#65a903'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#429400), to(#65a903)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #429400,  #65a903); /* ff 3.6+ */ 
+    background-image: -o-linear-gradient(top, #429400, #65a903); /* Opera 11.10-12.00 */
+}
+
+/* ~~~~~ HELPERS ~~~~~~ */
+a, button {
+    cursor: pointer;
+}
+#actionBar a:hover {
+    color: #2591d6;
+}
+#attachment:hover {
+    background: #f6e3e0;
+    cursor: pointer;
+}
+.chatButton:hover {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bae013', endColorstr='#60b602'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#bae013), to(#60b602)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #bae013,  #60b602); /* ff 3.6+ */ 
+    background-image: -o-linear-gradient(top, #bae013, #60b602); /* Opera 11.10-12.00 */
+}
+.tail {
+    float: right;
+    margin-right: 23px;
+    width: 22px;
+    height: 19px;
+}

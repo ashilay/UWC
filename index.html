@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+    <!--[if IE]><![endif]-->
+    <!--[if lt IE 7 ]> <html class="ie ie6">    <![endif]-->
+    <!--[if IE 7 ]>    <html class="ie ie7">    <![endif]-->
+    <!--[if IE 8 ]>    <html class="ie ie8">    <![endif]-->
+    <!--[if IE 9 ]>    <html class="ie ie9">    <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!--><html><!--<![endif]-->
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width" />
+        <title>Технічна підтрімка</title>
+        
+        <link rel="stylesheet" href="css/html5-doctor-reset-stylesheet.min.css" type="text/css">
+        
+        <link rel="stylesheet" href="css/media-queries.css" type="text/css">
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" type="text/css">
+        
+        <link rel="stylesheet/less" type="text/css" href="http://ms.p.ht/css/styles.less" />
+        <script type="text/javascript" src="http://ms.p.ht/js/less-1.3.1.min.js"></script>
+        
+        <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="js/knockout-2.1.0.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.9.1.custom.min.js"></script>
+        <script type="text/javascript" src="js/customScrollBarMobile.js"></script>
+        <script type="text/javascript" src="js/jquery.mCustomScrollbar.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+        <script type="text/javascript" src="js/moment.min.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
+    </head>
+    <body>
+        <div id="content">
+
+            <div id="enterChat">
+                <a href="#" data-bind="click: openChat" class="pie">
+                    <span>технічна підтримка</span>
+                    <img src="img/bubble.png" alt="bubble">
+                </a>
+            </div>        
+               
+            <div id="chat" class="pie" data-bind="visible: isChatOpened()" style="display: none">
+                <div id="chatPopup" class="pie">
+                    <div class="chatHeader">
+                        <div class="headerLable">
+                            <div><img src="img/bubble.png" alt="bubble"></div>
+                            <div>Технічна підтримка слухає...</div>
+                        </div>
+                        <div class="closeChat" data-bind="click: closeChat">
+                            <button class="chatButton">
+                                <span>
+                                    <img src="img/x.png" alt="bubble">
+                                </span>
+                                <span class="chatButtonText">завершити чат</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="chatBody">
+                        <div class="chatContent">
+                            <div id="messages" class="scrollableContent" >
+                                <!-- ko foreach: messages -->
+                                <div class="message" data-bind="css: {supportMessage: type == 'support', userMessage: type == 'user'}">
+                                    <div class="messageHeader">
+                                        <span class="name" data-bind="text: name">Підтримка</span> 
+                                        <span data-bind="text: date">(10.29.2012)</span>
+                                    </div>
+                                    <div class="messageBody">
+                                        <span class="messageText" data-bind="text: text">
+                                            Доброго дня, чим можу допомогти?
+                                        </span>
+                                    </div>
+                                    <div class="addAttachment" data-bind="visible: file">
+                                        <img src="img/attach.png" alt="attachment">
+                                        <a href="#" data-bind="text: file">вкласти файл</a>
+                                    </div>
+                                </div>
+                                <!-- /ko -->
+
+                            </div>
+                            
+                            <div id="messageText">
+                                <textarea id="textArea"></textarea>
+                            </div>
+                            
+                            <div id="actionBar">
+                                <div class="addAttachment">
+                                    <img src="img/attach.png" alt="attachment">
+                                    <a href="#">вкласти файл</a>
+                                    <input class="addFile" type="file" data-bind="value: file" style="display: none">
+                                </div>
+                                <div id="attachment" data-bind="visible: fileName, click: removeAttachment">
+                                    <span data-bind="text: fileName">утюг.png</span>
+                                    <img src="img/remove.png" alt="attachment">
+                                </div>
+                                <div class="sendMessage" data-bind="click: sendMessage">
+                                    <button class="sendButton">
+                                        надіслати
+                                    </button>
+                                </div>                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <img class ="tail" src="img/chatTail.png" alt="tail">
+                </div>
+                
+                <div id="email" data-bind="visible: isEmailPopupOpened" style="display: none">
+                    <div id="emailPopup">
+                        <div class="chatHeader">
+                            <div class="headerLable">
+                                <div><img src="img/bubble.png" alt="bubble"></div>
+                                <div>Чат завершено!</div>
+                            </div>
+                            <div class="closeChat" data-bind="click: closeEmailPopup">
+                                <button class="chatButton">
+                                    <span>
+                                        <img src="img/x.png" alt="bubble">
+                                    </span>
+                                    <span class="chatButtonText">закрити вікно</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="chatBody">
+                            <div class="chatContent">
+                                <div class="emailLabel">
+                                    Надіслати копію чату собі на почту
+                                </div>
+                                <div id="emailField">
+                                    <input type="text" value="Адреса єлектронної пошти">
+                                </div>
+                                <div class="sendMessage">
+                                    <button class="sendButton" disabled="disabled">
+                                        надіслати
+                                    </button>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <img class ="tail" src="img/emailTail.png" alt="tail">
+            </div>
+        </div>
+    </body>
+    
+    
+</html>
